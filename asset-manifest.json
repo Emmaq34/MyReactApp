@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/xiaochenxc/MyFirstReactApp/static/css/main.584f321a.chunk.css",
-    "main.js": "/xiaochenxc/MyFirstReactApp/static/js/main.ea39b35a.chunk.js",
-    "main.js.map": "/xiaochenxc/MyFirstReactApp/static/js/main.ea39b35a.chunk.js.map",
-    "runtime~main.js": "/xiaochenxc/MyFirstReactApp/static/js/runtime~main.5c5db74f.js",
-    "runtime~main.js.map": "/xiaochenxc/MyFirstReactApp/static/js/runtime~main.5c5db74f.js.map",
-    "static/js/2.b41502e9.chunk.js": "/xiaochenxc/MyFirstReactApp/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/xiaochenxc/MyFirstReactApp/static/js/2.b41502e9.chunk.js.map",
-    "index.html": "/xiaochenxc/MyFirstReactApp/index.html",
-    "precache-manifest.791c3b5496fe5db04e53e4b0e087a13d.js": "/xiaochenxc/MyFirstReactApp/precache-manifest.791c3b5496fe5db04e53e4b0e087a13d.js",
-    "service-worker.js": "/xiaochenxc/MyFirstReactApp/service-worker.js",
-    "static/css/main.584f321a.chunk.css.map": "/xiaochenxc/MyFirstReactApp/static/css/main.584f321a.chunk.css.map",
-    "static/media/logo.svg": "/xiaochenxc/MyFirstReactApp/static/media/logo.5d5d9eef.svg"
+    "main.css": "/MyFirstReactApp/static/css/main.584f321a.chunk.css",
+    "main.js": "/MyFirstReactApp/static/js/main.42ed7365.chunk.js",
+    "main.js.map": "/MyFirstReactApp/static/js/main.42ed7365.chunk.js.map",
+    "runtime~main.js": "/MyFirstReactApp/static/js/runtime~main.ad9edcd2.js",
+    "runtime~main.js.map": "/MyFirstReactApp/static/js/runtime~main.ad9edcd2.js.map",
+    "static/js/2.b41502e9.chunk.js": "/MyFirstReactApp/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/MyFirstReactApp/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/MyFirstReactApp/index.html",
+    "precache-manifest.17d6c3bf2a61355ce1f02ba1090ea6eb.js": "/MyFirstReactApp/precache-manifest.17d6c3bf2a61355ce1f02ba1090ea6eb.js",
+    "service-worker.js": "/MyFirstReactApp/service-worker.js",
+    "static/css/main.584f321a.chunk.css.map": "/MyFirstReactApp/static/css/main.584f321a.chunk.css.map",
+    "static/media/logo.svg": "/MyFirstReactApp/static/media/logo.5d5d9eef.svg"
   }
 }
