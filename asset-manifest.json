@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/xiaochenxc/MyFirstReactApp/static/css/main.584f321a.chunk.css",
+    "main.js": "/xiaochenxc/MyFirstReactApp/static/js/main.ea39b35a.chunk.js",
+    "main.js.map": "/xiaochenxc/MyFirstReactApp/static/js/main.ea39b35a.chunk.js.map",
+    "runtime~main.js": "/xiaochenxc/MyFirstReactApp/static/js/runtime~main.5c5db74f.js",
+    "runtime~main.js.map": "/xiaochenxc/MyFirstReactApp/static/js/runtime~main.5c5db74f.js.map",
+    "static/js/2.b41502e9.chunk.js": "/xiaochenxc/MyFirstReactApp/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/xiaochenxc/MyFirstReactApp/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/xiaochenxc/MyFirstReactApp/index.html",
+    "precache-manifest.791c3b5496fe5db04e53e4b0e087a13d.js": "/xiaochenxc/MyFirstReactApp/precache-manifest.791c3b5496fe5db04e53e4b0e087a13d.js",
+    "service-worker.js": "/xiaochenxc/MyFirstReactApp/service-worker.js",
+    "static/css/main.584f321a.chunk.css.map": "/xiaochenxc/MyFirstReactApp/static/css/main.584f321a.chunk.css.map",
+    "static/media/logo.svg": "/xiaochenxc/MyFirstReactApp/static/media/logo.5d5d9eef.svg"
+  }
+}
