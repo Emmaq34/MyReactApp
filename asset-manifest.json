@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/MyFirstReactApp/static/css/main.584f321a.chunk.css",
-    "main.js": "/MyFirstReactApp/static/js/main.f7fc8bdb.chunk.js",
-    "main.js.map": "/MyFirstReactApp/static/js/main.f7fc8bdb.chunk.js.map",
+    "main.js": "/MyFirstReactApp/static/js/main.3d6538a7.chunk.js",
+    "main.js.map": "/MyFirstReactApp/static/js/main.3d6538a7.chunk.js.map",
     "runtime~main.js": "/MyFirstReactApp/static/js/runtime~main.ad9edcd2.js",
     "runtime~main.js.map": "/MyFirstReactApp/static/js/runtime~main.ad9edcd2.js.map",
-    "static/js/2.b41502e9.chunk.js": "/MyFirstReactApp/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/MyFirstReactApp/static/js/2.b41502e9.chunk.js.map",
+    "static/js/2.db733784.chunk.js": "/MyFirstReactApp/static/js/2.db733784.chunk.js",
+    "static/js/2.db733784.chunk.js.map": "/MyFirstReactApp/static/js/2.db733784.chunk.js.map",
     "index.html": "/MyFirstReactApp/index.html",
-    "precache-manifest.b696a0f8ec8296ab67995cc44202dde0.js": "/MyFirstReactApp/precache-manifest.b696a0f8ec8296ab67995cc44202dde0.js",
-    "service-worker.js": "/MyFirstReactApp/service-worker.js",
-    "static/css/main.584f321a.chunk.css.map": "/MyFirstReactApp/static/css/main.584f321a.chunk.css.map",
-    "static/media/logo.svg": "/MyFirstReactApp/static/media/logo.5d5d9eef.svg"
+    "precache-manifest.6e0157b32c58005f1be1bfc06b758d8b.js": "/MyFirstReactApp/precache-manifest.6e0157b32c58005f1be1bfc06b758d8b.js",
+    "service-worker.js": "/MyFirstReactApp/service-worker.js"
   }
 }
