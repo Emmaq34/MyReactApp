@@ -1,10 +1,27 @@
 import React, {Component} from 'react';
 import ButtonAppBar from '../components/AppBar/AppBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Footer from "../components/Footer";
 import Home from "../components/home";
 import Color from "../components/color";
+import Button from "../components/button";
 import { withStyles } from '@material-ui/core/styles';
 import navItems from '../components/AppBar/data';
+import BarChart from "../components/barchart";
+import AreaChart from "../components/areachart";
+import LineChart from "../components/linechart";
+import PieChart from "../components/piechart";
+import StackedBarChart from "../components/stackedbarchart";
+import ScatterPlotChart from "../components/scatterplotchart";
+import IconPage from '../components/icon';
+import Tables from '../components/table';
+import MyTabs from '../components/tabs';
+import Spinner from '../components/spinner';
+import Progress from '../components/progress';
+import  Avatars  from '../components/avatar';
+import '../../node_modules/react-vis/dist/style.css';
+
+
 
 const styles = {
      moveRight:{
@@ -14,13 +31,18 @@ const styles = {
      moveLeft:{
          marginLeft:300,
          marginTop:50
+     },
+     contents:{
+         width:"100%",
+         height:"100vh",
+         overflow:"auto",
      }
   };
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          showing: false
+          showing: true
         };
   
         this.toggleChildMenu = this.toggleChildMenu.bind(this);
@@ -40,10 +62,26 @@ class App extends Component {
             <div className="App">
                 <ButtonAppBar listData={navItems} sideBarOpen={this.toggleChildMenu} sideBarShow={this.state.showing} />
                 <div className={this.state.showing ? classes.moveLeft : classes.moveRight}>
+                <div className={classes.contents}>
                 <Switch >
-                <Route path = "/home" component = {Home} />
+                <Route exact path = "/" component = {Home} />
                 <Route path = "/colors" component = {Color} />
+                <Route path = "/components/button" component = {Button} />
+                <Route path = "/charts/bar" component = {BarChart} />
+                <Route path = "/charts/area" component = {AreaChart} />
+                <Route path = "/charts/line" component = {LineChart} />
+                <Route path = "/charts/pie" component = {PieChart} />
+                <Route path = "/charts/stackbar" component = {StackedBarChart} />
+                <Route path = "/charts/scatterplot" component = {ScatterPlotChart} />
+                <Route path = "/icons" component = {IconPage} />
+                <Route path = "/components/table" component = {Tables} />
+                <Route path = "/components/tabs" component = {MyTabs} />
+                <Route path = "/components/spinner" component = {Spinner} />
+                <Route path = "/components/progress" component = {Progress} />
+                <Route path = "/components/avatar" component = {Avatars} />
                 </Switch>
+                <Footer/>
+                </div>
                 </div>
             </div>
         </Router>

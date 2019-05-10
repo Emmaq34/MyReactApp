@@ -28,11 +28,7 @@ const navItems = [
           url: BASE_URL + 'components/table',
           icon: 'NavigateNext'
         },
-        {
-          label: 'TreeTable',
-          url: BASE_URL + 'components/treeTable',
-          icon: 'NavigateNext'
-        },
+        
         {
           label: 'Tabs',
           url: BASE_URL + 'components/tabs',
@@ -48,31 +44,13 @@ const navItems = [
           url: BASE_URL + 'components/progress',
           icon: 'NavigateNext'
         },
-        {
-          label: 'MessageBar',
-          url: BASE_URL + 'components/messagebar',
-          icon: 'NavigateNext'
-        },
-        {
-          label: 'Notification',
-          url: BASE_URL + 'components/notification',
-          icon: 'NavigateNext'
-        },
-        {
-          label: 'Dialog',
-          url: BASE_URL + 'components/dialog',
-          icon: 'NavigateNext'
-        },
+        
         {
           label: 'Avatar',
           url: BASE_URL + 'components/avatar',
           icon: 'NavigateNext'
         },
-        {
-          label: 'Markdown',
-          url: BASE_URL + 'components/markdown',
-          icon: 'NavigateNext'
-        },
+        
       ]
     },
     {

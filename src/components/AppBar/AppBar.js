@@ -30,7 +30,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   appbar:{
-    height:50,
+    height:60,
   },
   grow: {
     flexGrow: 1,
@@ -40,14 +40,14 @@ const styles = theme => ({
     marginRight: 20,
   },
   show:{
-    marginTop:50,
+    marginTop:60,
    
   },
   sidebar:{
-    width:"20%",
+    width:"15%",
     height:"100vh",
-    backgroundColor: theme.palette.background.paper,
-    borderRight: "3px solid green",
+    overflow:"auto",
+    borderRight:"3px solid green",
     position: "absolute"
    
   },
@@ -72,12 +72,16 @@ class ButtonAppBar extends React.Component {
     handleClose = () => {
       this.setState({ anchorEl: null });
     };
-
-    sideLitstClick = () => {
+    sideLitstClick = (oneState) => {
       this.setState({
-        openSideList: !this.state.openSideList,
+        [oneState]: !this.state[oneState],
       });
     };
+    //sideLitstClick = () => {
+     // this.setState({
+     //   openSideList: !this.state.openSideList,
+     // });
+    //};
   
     render() {
       const { anchorEl } = this.state;
@@ -88,26 +92,26 @@ class ButtonAppBar extends React.Component {
       const sidebarData = listData.navItems.map(name =>{
         console.log(name);
         console.log(typeof name.subNavItems);
-        var i = 1;
+        
         if(  typeof name.subNavItems === "object" ){
             console.log(1);
             const Icon = Icons[name.icon];
             return(
               <React.Fragment >
               <Link to= {name.url}>
-              <ListItem button onClick={this.sideLitstClick}>
+              <ListItem button onClick={()=>{this.sideLitstClick(name.label)}}>
                  <ListItemIcon>
                     <Icon />
                  </ListItemIcon>
                  <ListItemText inset primary={name.label} />
-                   {this.state.openSideList ? <ExpandLess /> : <ExpandMore />}
+                   {this.state[name.label] ? <ExpandLess /> : <ExpandMore />}
                </ListItem>
                </Link>
                {name.subNavItems.map(subSidebar =>{
                 const Iconsub = Icons[subSidebar.icon];
                 return(
                   <Link to={subSidebar.url}>
-                  <Collapse in={this.state.openSideList} timeout="auto" unmountOnExit>
+                  <Collapse in={this.state[name.label]} timeout="auto" unmountOnExit>
                      <List component="div" disablePadding>
                        <ListItem button className={classes.nested}>
                           <ListItemIcon>
@@ -152,7 +156,7 @@ class ButtonAppBar extends React.Component {
           
 
           <Typography variant="title"  className={classes.grow}>
-            Title
+            Material UI Libarary
           </Typography>
           <IconButton  aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup="true"
