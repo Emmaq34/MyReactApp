@@ -11,13 +11,11 @@ class Footer extends React.Component{
   render(){
     const{classes} = this.props;
     return(
-    
         <div className= {classes.footer}>
           © 2019 Material UI React
         </div>
       );
   }
-  
 
 }
 

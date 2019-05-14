@@ -61,13 +61,10 @@ const styles = theme => ({
 });
 class ButtonAppBar extends React.Component {
     state = {
-      //anchorEl: null,
       showing: false,
       openSideList: false,
     };
-    /*
-    
-    */
+   
    handleClickAction = (event) => {
     this.props.handleClick(event);
   };
@@ -76,28 +73,20 @@ class ButtonAppBar extends React.Component {
     this.props.handleClose();
   };
     sideLitstClick = (oneState) => {
-      this.setState({
-        [oneState]: !this.state[oneState],
-      });
+      this.props.sideList(oneState);
     };
-    //sideLitstClick = () => {
-     // this.setState({
-     //   openSideList: !this.state.openSideList,
-     // });
-    //};
+ 
   
     render() {
       const { anchorEl } = this.props;
       const { classes } = this.props;
-      const {listData} = this.props;
-      console.log(listData);
       
-      const sidebarData = listData.navItems.map(name =>{
-        console.log(name);
-        console.log(typeof name.subNavItems);
+      const sidebarData = this.props.data.map(name =>{
+        //console.log(name);
+        //console.log(typeof name.subNavItems);
         
-        if(  typeof name.subNavItems === "object" ){
-            console.log(1);
+        if(typeof name.subNavItems === "object"){
+          
             const Icon = Icons[name.icon];
             return(
               <React.Fragment >
@@ -107,14 +96,14 @@ class ButtonAppBar extends React.Component {
                     <Icon />
                  </ListItemIcon>
                  <ListItemText inset primary={name.label} />
-                   {this.state[name.label] ? <ExpandLess /> : <ExpandMore />}
+                   {this.props[name.label] ? <ExpandLess /> : <ExpandMore />}
                </ListItem>
                </Link>
                {name.subNavItems.map(subSidebar =>{
                 const Iconsub = Icons[subSidebar.icon];
                 return(
                   <Link to={subSidebar.url}>
-                  <Collapse in={this.state[name.label]} timeout="auto" unmountOnExit>
+                  <Collapse in={this.props[name.label]} timeout="auto" unmountOnExit>
                      <List component="div" disablePadding>
                        <ListItem button className={classes.nested}>
                           <ListItemIcon>
@@ -124,16 +113,15 @@ class ButtonAppBar extends React.Component {
                         </ListItem>
                       </List>
                    </Collapse>
-                   </Link>
-                   
+                   </Link> 
                )
              })}
              </React.Fragment>
             );  
         }
         else{
-          console.log(2);
-          console.log(name.icon);
+          //console.log(2);
+          //console.log(name.icon);
           const Icon = Icons[name.icon];
           return(
             <Link to= {name.url}>
@@ -165,7 +153,6 @@ class ButtonAppBar extends React.Component {
             aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup="true"
             onClick={ this.handleClickAction}
-            //onClick={this.props.handleClickAction()}
             color="inherit" aria-label="Menu">
                <AccountCircle />
           </IconButton>
@@ -178,7 +165,6 @@ class ButtonAppBar extends React.Component {
             getContentAnchorEl={null}
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
-            
             onClose={this.handleCloseAction}
           >
            <MenuItem onClick={this.handleCloseAction}>Profile</MenuItem>
@@ -199,7 +185,7 @@ class ButtonAppBar extends React.Component {
     }
   }
   const mapStateToProps = state => ({
-    ...state
+    ...state,
   });
   const mapDispatchToProps = dispatch => {
    return{
@@ -207,9 +193,9 @@ class ButtonAppBar extends React.Component {
     hideAction: () => dispatch(hideAction),
     handleClick: (event) => {dispatch({type: 'openMenue', event : event})},
     handleClose: () => {dispatch({type: 'closeMenue'})},
-    //handleOpenAction: () => dispatch(handleOpenAction),
+    sideList: (oneState) => {dispatch({type: 'sidelist', oneState : oneState})},
    };
     
   };
-//export default withStyles(styles)(ButtonAppBar);
+
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ButtonAppBar));

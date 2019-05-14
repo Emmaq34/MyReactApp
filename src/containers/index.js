@@ -6,7 +6,6 @@ import Home from "../components/home";
 import Color from "../components/color";
 import Button from "../components/button";
 import { withStyles } from '@material-ui/core/styles';
-import navItems from '../components/AppBar/data';
 import BarChart from "../components/barchart";
 import AreaChart from "../components/areachart";
 import LineChart from "../components/linechart";
@@ -59,14 +58,15 @@ class App extends Component {
      }
      */
     
-    
-      
+     
     render(){
         const { classes } = this.props;
+        const {listData} = this.props;
+        
         return(
             <Router>
             <div className="App">
-                <ButtonAppBar listData={navItems} />
+                <ButtonAppBar data= {listData} />
                 <div className={this.props.switching ? classes.moveLeft : classes.moveRight}>
                 <div className={classes.contents}>
                 <Switch >
@@ -103,4 +103,3 @@ const mapDispatchToProps = dispatch => ({
     hideAction: () => dispatch(hideAction)
   });
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));
-//export default withStyles(styles) (connect(mapStateToProps, mapDispatchToProps)(App));
