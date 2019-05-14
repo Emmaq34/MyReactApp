@@ -20,7 +20,9 @@ import Spinner from '../components/spinner';
 import Progress from '../components/progress';
 import  Avatars  from '../components/avatar';
 import '../../node_modules/react-vis/dist/style.css';
-
+import { connect } from "react-redux";
+import { showAction } from "../components/Actions/showAction";
+import  { hideAction }  from "../components/Actions/hideAction";
 
 
 const styles = {
@@ -38,7 +40,9 @@ const styles = {
          overflow:"auto",
      }
   };
+  
 class App extends Component {
+    /*
     constructor(props) {
         super(props);
         this.state = {
@@ -53,15 +57,17 @@ class App extends Component {
           showing: !state.showing
         }));
      }
-  
+     */
+    
+    
       
     render(){
         const { classes } = this.props;
         return(
             <Router>
             <div className="App">
-                <ButtonAppBar listData={navItems} sideBarOpen={this.toggleChildMenu} sideBarShow={this.state.showing} />
-                <div className={this.state.showing ? classes.moveLeft : classes.moveRight}>
+                <ButtonAppBar listData={navItems} />
+                <div className={this.props.switching ? classes.moveLeft : classes.moveRight}>
                 <div className={classes.contents}>
                 <Switch >
                 <Route exact path = "/" component = {Home} />
@@ -88,4 +94,13 @@ class App extends Component {
         );
     }
 }
-export default withStyles(styles)(App);
+const mapStateToProps = state => ({
+    ...state
+});
+
+const mapDispatchToProps = dispatch => ({
+    showAction: () => dispatch(showAction),
+    hideAction: () => dispatch(hideAction)
+  });
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));
+//export default withStyles(styles) (connect(mapStateToProps, mapDispatchToProps)(App));

@@ -22,6 +22,9 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import {Link} from 'react-router-dom';
 import * as Icons from '@material-ui/icons/';
 
+import { connect } from "react-redux";
+import { showAction } from "../../components/Actions/showAction";
+import  { hideAction }  from "../../components/Actions/hideAction";
 
 
 
@@ -58,20 +61,20 @@ const styles = theme => ({
 });
 class ButtonAppBar extends React.Component {
     state = {
-      anchorEl: null,
+      //anchorEl: null,
       showing: false,
       openSideList: false,
     };
+    /*
     
-    handleClick = event => {
-      this.setState({ 
-        anchorEl: event.currentTarget,
-      });
-    };
-  
-    handleClose = () => {
-      this.setState({ anchorEl: null });
-    };
+    */
+   handleClickAction = (event) => {
+    this.props.handleClick(event);
+  };
+
+  handleCloseAction = () => {
+    this.props.handleClose();
+  };
     sideLitstClick = (oneState) => {
       this.setState({
         [oneState]: !this.state[oneState],
@@ -84,7 +87,7 @@ class ButtonAppBar extends React.Component {
     //};
   
     render() {
-      const { anchorEl } = this.state;
+      const { anchorEl } = this.props;
       const { classes } = this.props;
       const {listData} = this.props;
       console.log(listData);
@@ -150,7 +153,7 @@ class ButtonAppBar extends React.Component {
         <div position = "relative" className={classes.root}>
           <AppBar position="absolute" className={classes.appbar}>
           <Toolbar>
-          <IconButton className={classes.menuButton} onClick={() => {this.props.sideBarOpen()}} color="inherit" aria-label="Menu">
+          <IconButton className={classes.menuButton} onClick={this.props.switching? this.props.hideAction : this.props.showAction} color="inherit" aria-label="Menu">
               <MenuIcon />
           </IconButton>
           
@@ -158,9 +161,11 @@ class ButtonAppBar extends React.Component {
           <Typography variant="title"  className={classes.grow}>
             Material UI Libarary
           </Typography>
-          <IconButton  aria-owns={anchorEl ? 'simple-menu' : undefined}
+          <IconButton
+            aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup="true"
-            onClick={this.handleClick}
+            onClick={ this.handleClickAction}
+            //onClick={this.props.handleClickAction()}
             color="inherit" aria-label="Menu">
                <AccountCircle />
           </IconButton>
@@ -173,16 +178,16 @@ class ButtonAppBar extends React.Component {
             getContentAnchorEl={null}
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
-            onClose={this.handleClose}
+            
+            onClose={this.handleCloseAction}
           >
-            <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-            <MenuItem onClick={this.handleClose}>My account</MenuItem>
-            <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+           <MenuItem onClick={this.handleCloseAction}>Profile</MenuItem>
+           
           </Menu>
           
           </Toolbar> 
         </AppBar>
-        <div className = {classes.show} style={{ display: (this.props.sideBarShow ? 'block' : 'none')}}>
+        <div className = {classes.show} style={{ display: (this.props.switching ? '' : 'none')}}>
             <List className={classes.sidebar}>
                {sidebarData}
             </List>
@@ -193,5 +198,18 @@ class ButtonAppBar extends React.Component {
       );
     }
   }
-
-export default withStyles(styles)(ButtonAppBar);
+  const mapStateToProps = state => ({
+    ...state
+  });
+  const mapDispatchToProps = dispatch => {
+   return{
+    showAction: () => dispatch(showAction),
+    hideAction: () => dispatch(hideAction),
+    handleClick: (event) => {dispatch({type: 'openMenue', event : event})},
+    handleClose: () => {dispatch({type: 'closeMenue'})},
+    //handleOpenAction: () => dispatch(handleOpenAction),
+   };
+    
+  };
+//export default withStyles(styles)(ButtonAppBar);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ButtonAppBar));
