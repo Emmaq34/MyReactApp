@@ -50,7 +50,11 @@ const navItems = [
           url: BASE_URL + 'components/avatar',
           icon: 'NavigateNext'
         },
-        
+        {
+          label: 'Chips',
+          url: BASE_URL + 'components/chips',
+          icon: 'NavigateNext'
+        },
       ]
     },
     {

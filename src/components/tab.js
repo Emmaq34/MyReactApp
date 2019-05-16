@@ -26,7 +26,10 @@ const styles = theme => ({
   },
   content:{
     height:"100%",
-    backgroundColor:"#f5f2f0"
+    backgroundColor:"#f5f2f0",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
  
 });

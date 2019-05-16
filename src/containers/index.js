@@ -17,7 +17,8 @@ import Tables from '../components/table';
 import MyTabs from '../components/tabs';
 import Spinner from '../components/spinner';
 import Progress from '../components/progress';
-import  Avatars  from '../components/avatar';
+import Avatars  from '../components/avatar';
+import Chips from '../components/chips';
 import '../../node_modules/react-vis/dist/style.css';
 import { connect } from "react-redux";
 import { showAction } from "../components/Actions/showAction";
@@ -86,6 +87,7 @@ class App extends Component {
                 <Route path = "/components/spinner" component = {Spinner} />
                 <Route path = "/components/progress" component = {Progress} />
                 <Route path = "/components/avatar" component = {Avatars} />
+                <Route path = "/components/chips" component = {Chips} />
                 </Switch>
                 <Footer/>
                 </div>
