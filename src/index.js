@@ -4,6 +4,7 @@ import App from './containers/';
 import { Provider } from "react-redux";
 import showHideReducer from './components/Reducers/showHideReducer';
 import { createStore } from "redux";
+import './index.css'
 
 const store = createStore(showHideReducer);
 // render react page

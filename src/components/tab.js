@@ -12,16 +12,23 @@ const styles = theme => ({
     
   },
   appBar:{
-    backgroundColor: 'white',
+    
     color:'black',
   },
   tab:{
-    centered: true,
+    backgroundColor:"#0091ea",
+    color: "white"
   },
   paper:{
     height:'70vh',
     overflow: 'auto',
-  }
+    backgroundColor:"#f5f2f0"
+  },
+  content:{
+    height:"100%",
+    backgroundColor:"#f5f2f0"
+  },
+ 
 });
 
 class TemplateTabs extends React.Component {
@@ -42,14 +49,14 @@ class TemplateTabs extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
-          <Tabs value={value} onChange={this.handleChange}>
+          <Tabs className={classes.tab} value={value} onChange={this.handleChange}>
             <Tab label={this.props.label || "Item One"} />
             <Tab label="SAMPLE CODE" />
           </Tabs>
         </AppBar>
         <Paper className={classes.paper} elevation={10}>
-        {value === 0 && <div>{this.props.content}</div>}
-        {value === 1 && <div>{this.props.markDown}</div>}
+        {value === 0 && <div className={classes.content}>{this.props.content}</div>}
+        {value === 1 && <div className={classes.content}>{this.props.markDown}</div>}
         </Paper>
   
       </div>

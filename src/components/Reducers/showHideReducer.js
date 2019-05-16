@@ -1,8 +1,10 @@
 import Data from "../AppBar/data";
+import Links from "../AppBar/topRightMenueData";
 const initState = {
   anchorEl:null,
   switching:true,
-  listData: Data.navItems
+  listData: Data.navItems,
+  links:Links.links,
 }
 export default (state=initState, action) => {
     switch (action.type) {

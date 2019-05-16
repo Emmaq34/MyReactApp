@@ -2,20 +2,36 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TemplateTabs from './tab';
 import Button from '@material-ui/core/Button';
-import { MarkdownElement as Markdown } from '@material-ui/docs/';
+
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "./codeblock";
+import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+import NavigationIcon from '@material-ui/icons/Navigation';
 
 const styles = theme => ({
      root:{
         marginTop:60,
      },
-     section:{
-        border: "1px solid black",
+     button:{
+        display:"flex",
+        justifyContent :"space-evenly",
+        flexDirection:"column",
+        alignItems: "center",
+        height:"100%",
      },
      markdown:{
-         backgroundColor:"black",
-     }
+        backgroundColor:"#eeeeee",
+
+     },
+     margin: {
+        margin: 2*theme.spacing.unit,
+      },
+      extendedIcon: {
+        marginRight: 2*theme.spacing.unit,
+      },
   });
 
   class Buttons extends React.Component{
@@ -23,82 +39,100 @@ const styles = theme => ({
     render(){
         const{classes} = this.props;
         const string = `
-        import { Button } from "ZapWebCommon/lib/js/"
-        <Button
-            color="primary | secondary"
-            variant="outlined | contained"
-            size="small | medium | large"
-        >
-            Button
+        import { Button } from "@material-ui/core/Button"
+        <Button size="small" className={classes.margin}>
+        Small
         </Button>
-        <Button disabled>Disabled Button</Button> `;
+        <Button size="medium" className={classes.margin}>
+         Medium
+        </Button>
+        <Button size="large" className={classes.margin}>
+        Large
+        </Button> `;
 
         return(
             <div className={classes.root}>
                
-               <TemplateTabs markDown = {(
-                   <ReactMarkdown
+               <TemplateTabs   markDown = {(
+                   <ReactMarkdown className={classes.markdown}
                    source={string}
                    renderers={{ code: CodeBlock }}
                />
           
             )} label={"BUTTON DEMO"} content={( 
-               <div>
-                  <h3>Default</h3>
-                    <div className= {classes.section}>
-                        <Button>Default</Button>
-                        <Button color="primary">
-                            Primary
-                        </Button>
-                        <Button color="secondary">
-                            Secondary
-                        </Button>
-                        <Button disabled>
-                            Disabled
-                        </Button>
-                    </div>
-                    <h3>Outlined</h3>
-            <div className= {classes.section}>
-                <Button variant="outlined">Default</Button>
-                <Button variant="outlined" color="primary">
-                    Primary
-                </Button>
-                <Button variant="outlined" color="secondary">
-                    Secondary
-                </Button>
-                <Button variant="outlined" disabled>
-                    Disabled
-                </Button>
-            </div>
-            <h3>Contained</h3>
-            <div className= {classes.section}>
-                <Button variant="contained">Default</Button>
-                <Button variant="contained" color="primary">
-                    Primary
-                </Button>
-                <Button variant="contained" color="secondary">
-                    Secondary
-                </Button>
-                <Button variant="contained" disabled>
-                    Disabled
-                </Button>
-            </div>
-            <h3>Size</h3>
-            <div className= {classes.section}>
-                <Button size="small" variant="contained">
+               <div className={classes.button}> 
+
+                 <div>
+                    <Button size="small" className={classes.margin}>
                     Small
-                </Button>
-                <Button size="medium" variant="contained" color="secondary">
+                    </Button>
+                    <Button size="medium" className={classes.margin}>
                     Medium
-                </Button>
-                <Button size="medium" variant="contained" disabled>
-                    Disabled
-                </Button>
-                <Button size="large" variant="contained" color="primary">
+                    </Button>
+                    <Button size="large" className={classes.margin}>
                     Large
-                </Button>
-            </div>
-                </div> 
+                    </Button>
+                </div>
+                <div>
+                    <Button variant="outlined" size="small" color="primary" className={classes.margin}>
+                    Small
+                    </Button>
+                    <Button variant="outlined" size="medium" color="primary" className={classes.margin}>
+                    Medium
+                    </Button>
+                    <Button variant="outlined" size="large" color="primary" className={classes.margin}>
+                    Large
+                    </Button>
+                </div>
+                <div>
+                    <Button variant="contained" size="small" color="primary" className={classes.margin}>
+                    Small
+                    </Button>
+                    <Button variant="contained" size="medium" color="primary" className={classes.margin}>
+                    Medium
+                    </Button>
+                    <Button variant="contained" size="large" color="primary" className={classes.margin}>
+                    Large
+                    </Button>
+                </div>
+                <div>
+                    <Fab size="small" color="secondary" aria-label="Add" className={classes.margin}>
+                    <AddIcon />
+                    </Fab>
+                    <Fab size="medium" color="secondary" aria-label="Add" className={classes.margin}>
+                    <AddIcon />
+                    </Fab>
+                    <Fab color="secondary" aria-label="Add" className={classes.margin}>
+                    <AddIcon />
+                    </Fab>
+                </div>
+                <div>
+                    <Fab
+                    variant="extended"
+                    size="small"
+                    color="primary"
+                    aria-label="Add"
+                    className={classes.margin}
+                    >
+                    <NavigationIcon className={classes.extendedIcon} />
+                    Extended
+                    </Fab>
+                    <Fab
+                    variant="extended"
+                    size="medium"
+                    color="primary"
+                    aria-label="Add"
+                    className={classes.margin}
+                    >
+                    <NavigationIcon className={classes.extendedIcon} />
+                    Extended
+                    </Fab>
+                    <Fab variant="extended" color="primary" aria-label="Add" className={classes.margin}>
+                    <NavigationIcon className={classes.extendedIcon} />
+                    Extended
+                    </Fab>
+                </div>
+              </div> 
             )}/>
             
             </div>

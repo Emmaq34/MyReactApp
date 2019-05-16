@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ButtonAppBar from '../components/AppBar/AppBar';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, HashRouter} from 'react-router-dom';
 import Footer from "../components/Footer";
 import Home from "../components/home";
 import Color from "../components/color";
@@ -62,11 +62,12 @@ class App extends Component {
     render(){
         const { classes } = this.props;
         const {listData} = this.props;
+        const {links} = this.props;
         
         return(
-            <Router>
+            <Router basename={"/MyReactApp"}>
             <div className="App">
-                <ButtonAppBar data= {listData} />
+                <ButtonAppBar data= {listData} menueLinks={links}/>
                 <div className={this.props.switching ? classes.moveLeft : classes.moveRight}>
                 <div className={classes.contents}>
                 <Switch >

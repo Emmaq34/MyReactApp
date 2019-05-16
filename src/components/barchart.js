@@ -2,7 +2,6 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TemplateTabs from './tab';
 import {Charts} from './index';
-import { MarkdownElement as Markdown } from '@material-ui/docs/';
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "./codeblock";
 const styles = theme => ({

@@ -37,6 +37,7 @@ const styles = theme => ({
   },
   grow: {
     flexGrow: 1,
+    color:"white"
   },
   menuButton: {
     marginLeft: -12,
@@ -80,6 +81,12 @@ class ButtonAppBar extends React.Component {
     render() {
       const { anchorEl } = this.props;
       const { classes } = this.props;
+
+      const menueItems = this.props.menueLinks.map(i =>{
+        return(
+          <MenuItem onClick={this.handleCloseAction}><a href={i.url}>{i.name}</a></MenuItem>
+        )
+      });
       
       const sidebarData = this.props.data.map(name =>{
         //console.log(name);
@@ -167,8 +174,7 @@ class ButtonAppBar extends React.Component {
             open={Boolean(anchorEl)}
             onClose={this.handleCloseAction}
           >
-           <MenuItem onClick={this.handleCloseAction}>Profile</MenuItem>
-           
+          {menueItems}
           </Menu>
           
           </Toolbar> 
