@@ -12,6 +12,9 @@ import LineChart from "../components/linechart";
 import PieChart from "../components/piechart";
 import StackedBarChart from "../components/stackedbarchart";
 import ScatterPlotChart from "../components/scatterplotchart";
+import Histogram from "../components/histogram";
+import Linemark from "../components/linemark";
+import Mark from "../components/mark";
 import IconPage from '../components/icon';
 import Tables from '../components/table';
 import MyTabs from '../components/tabs';
@@ -85,6 +88,9 @@ class App extends Component {
                 <Route path = "/charts/pie" component = {PieChart} />
                 <Route path = "/charts/stackbar" component = {StackedBarChart} />
                 <Route path = "/charts/scatterplot" component = {ScatterPlotChart} />
+                <Route path = "/charts/histogram" component = {Histogram} />
+                <Route path = "/charts/linemark" component = {Linemark} />
+                <Route path = "/charts/mark" component = {Mark} />
                 <Route path = "/icons" component = {IconPage} />
                 <Route path = "/components/table" component = {Tables} />
                 <Route path = "/components/tabs" component = {MyTabs} />

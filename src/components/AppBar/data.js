@@ -111,7 +111,22 @@ const navItems = [
           label: 'scatterplot',
           url: BASE_URL + 'charts/scatterplot',
           icon: 'NavigateNext'
-        }
+        },
+        {
+          label: 'histogram',
+          url: BASE_URL + 'charts/histogram',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'linemark',
+          url: BASE_URL + 'charts/linemark',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'mark',
+          url: BASE_URL + 'charts/mark',
+          icon: 'NavigateNext'
+        },
       ]
     },
     {

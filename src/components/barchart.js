@@ -83,7 +83,7 @@ const styles = theme => ({
             VerticalGridLines,
             HorizontalGridLines
         } = Charts;
-        //const {width, height} = this.props;
+     
         return(
             <div className={classes.root}>
                

@@ -8,7 +8,8 @@ const styles = theme => ({
      },
      paper:{
          width:"100%",
-         height:"50vh"
+         height:"50vh",
+         backgroundColor:"#f5f2f0",
      }
   });
 
