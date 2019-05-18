@@ -48,7 +48,6 @@ const styles = theme => ({
    
   },
   sidebar:{
-    width:"15%",
     height:"100vh",
     overflow:"auto",
     borderRight:"3px solid green",
@@ -97,7 +96,6 @@ class ButtonAppBar extends React.Component {
             const Icon = Icons[name.icon];
             return(
               <React.Fragment >
-              <Link to= {name.url}>
               <ListItem button onClick={()=>{this.sideLitstClick(name.label)}}>
                  <ListItemIcon>
                     <Icon />
@@ -105,7 +103,6 @@ class ButtonAppBar extends React.Component {
                  <ListItemText inset primary={name.label} />
                    {this.props[name.label] ? <ExpandLess /> : <ExpandMore />}
                </ListItem>
-               </Link>
                {name.subNavItems.map(subSidebar =>{
                 const Iconsub = Icons[subSidebar.icon];
                 return(

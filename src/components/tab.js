@@ -31,6 +31,9 @@ const styles = theme => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  markdown:{
+    backgroundColor:"#f5f2f0",
+  }
  
 });
 
@@ -59,7 +62,7 @@ class TemplateTabs extends React.Component {
         </AppBar>
         <Paper className={classes.paper} elevation={10}>
         {value === 0 && <div className={classes.content}>{this.props.content}</div>}
-        {value === 1 && <div className={classes.content}>{this.props.markDown}</div>}
+        {value === 1 && <div className={classes.markdown}>{this.props.markDown}</div>}
         </Paper>
   
       </div>

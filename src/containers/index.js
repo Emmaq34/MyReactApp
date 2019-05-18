@@ -16,9 +16,13 @@ import IconPage from '../components/icon';
 import Tables from '../components/table';
 import MyTabs from '../components/tabs';
 import Spinner from '../components/spinner';
-import Progress from '../components/progress';
 import Avatars  from '../components/avatar';
 import Chips from '../components/chips';
+import Dividers from '../components/dividers';
+import Snackbars from '../components/snackbars';
+import Switches from '../components/switches';
+import Textfields from '../components/textfields';
+import Selects from '../components/selects';
 import '../../node_modules/react-vis/dist/style.css';
 import { connect } from "react-redux";
 import { showAction } from "../components/Actions/showAction";
@@ -85,9 +89,13 @@ class App extends Component {
                 <Route path = "/components/table" component = {Tables} />
                 <Route path = "/components/tabs" component = {MyTabs} />
                 <Route path = "/components/spinner" component = {Spinner} />
-                <Route path = "/components/progress" component = {Progress} />
                 <Route path = "/components/avatar" component = {Avatars} />
                 <Route path = "/components/chips" component = {Chips} />
+                <Route path = "/components/dividers" component = {Dividers} />
+                <Route path = "/components/snackbars" component = {Snackbars} />
+                <Route path = "/components/switches" component = {Switches} />
+                <Route path = "/components/textfields" component = {Textfields} />
+                <Route path = "/components/selects" component = {Selects} />
                 </Switch>
                 <Footer/>
                 </div>

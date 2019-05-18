@@ -39,11 +39,6 @@ const navItems = [
           url: BASE_URL + 'components/spinner',
           icon: 'NavigateNext'
         },
-        {
-          label: 'Progress',
-          url: BASE_URL + 'components/progress',
-          icon: 'NavigateNext'
-        },
         
         {
           label: 'Avatar',
@@ -53,6 +48,31 @@ const navItems = [
         {
           label: 'Chips',
           url: BASE_URL + 'components/chips',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'Dividers',
+          url: BASE_URL + 'components/dividers',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'Snackbars',
+          url: BASE_URL + 'components/snackbars',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'Switches',
+          url: BASE_URL + 'components/switches',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'Textfields',
+          url: BASE_URL + 'components/textfields',
+          icon: 'NavigateNext'
+        },
+        {
+          label: 'Selects',
+          url: BASE_URL + 'components/selects',
           icon: 'NavigateNext'
         },
       ]
