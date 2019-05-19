@@ -72,7 +72,7 @@ class ButtonAppBar extends React.Component {
   handleCloseAction = () => {
     this.props.handleClose();
   };
-    sideLitstClick = (oneState) => {
+    sideListClick = (oneState) => {
       this.props.sideList(oneState);
     };
  
@@ -81,6 +81,7 @@ class ButtonAppBar extends React.Component {
       const { anchorEl } = this.props;
       const { classes } = this.props;
 
+
       const menueItems = this.props.menueLinks.map(i =>{
         return(
           <MenuItem onClick={this.handleCloseAction}><a href={i.url}>{i.name}</a></MenuItem>
@@ -88,15 +89,20 @@ class ButtonAppBar extends React.Component {
       });
       
       const sidebarData = this.props.data.map(name =>{
-        //console.log(name);
-        //console.log(typeof name.subNavItems);
         
         if(typeof name.subNavItems === "object"){
-          
+            //console.log('the this inside subnavitem ', this)
+            //console.log('name url ', name.url)
+            //console.log('name label ', name.label)
             const Icon = Icons[name.icon];
+            if(this.props[name.label]=== undefined){
+              if(window.location.pathname.indexOf(name.url) > -1){
+                this.sideListClick(name.label)
+              }
+            }
             return(
               <React.Fragment >
-              <ListItem button onClick={()=>{this.sideLitstClick(name.label)}}>
+              <ListItem button onClick={()=>{this.sideListClick(name.label)}}>
                  <ListItemIcon>
                     <Icon />
                  </ListItemIcon>
