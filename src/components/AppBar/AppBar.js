@@ -19,7 +19,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import * as Icons from '@material-ui/icons/';
 
 import { connect } from "react-redux";
@@ -106,7 +106,7 @@ class ButtonAppBar extends React.Component {
                {name.subNavItems.map(subSidebar =>{
                 const Iconsub = Icons[subSidebar.icon];
                 return(
-                  <Link to={subSidebar.url}>
+                  <NavLink to={subSidebar.url}>
                   <Collapse in={this.props[name.label]} timeout="auto" unmountOnExit>
                      <List component="div" disablePadding>
                        <ListItem button className={classes.nested}>
@@ -117,7 +117,7 @@ class ButtonAppBar extends React.Component {
                         </ListItem>
                       </List>
                    </Collapse>
-                   </Link> 
+                   </NavLink> 
                )
              })}
              </React.Fragment>
@@ -128,14 +128,14 @@ class ButtonAppBar extends React.Component {
           //console.log(name.icon);
           const Icon = Icons[name.icon];
           return(
-            <Link to= {name.url}>
+            <NavLink exact to= {name.url} >
               <ListItem button >
                  <ListItemIcon>
                   <Icon/>
                  </ListItemIcon>
                  <ListItemText inset primary= {name.label} />
                </ListItem>
-               </Link>
+               </NavLink>
           )
         }
       })

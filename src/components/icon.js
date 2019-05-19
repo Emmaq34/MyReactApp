@@ -16,7 +16,9 @@ const styles = theme => ({
        widthin:"100%",
        height:"100vh",
     },
-    
+    icon:{
+       color: "#3f51b5",
+    },
  });
 
  class IconPage extends Component {
@@ -46,13 +48,14 @@ const styles = theme => ({
       for(let key in Icons) {
           const Icon = Icons[key];
           const className = key === this.state.selected ? 'selected' : '';
+          const { classes } = this.props;
 
           iconsComp.push(
-              <Button className = {className}
+              <Button className = {className} 
                   key={'icon-' + key}
                   onClick={this.onSelect.bind(this, key)}
               >
-                  <Icon />
+                  <Icon className={classes.icon}/>
               </Button>
           );
       };
