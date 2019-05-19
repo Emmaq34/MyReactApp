@@ -1,5 +1,5 @@
-import Data from "../AppBar/data";
-import Links from "../AppBar/topRightMenueData";
+import Data from "../components/AppBar/data";
+import Links from "../components/AppBar/topRightMenueData";
 const initState = {
   anchorEl:null,
   switching:true,

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/';
 import { Provider } from "react-redux";
-import showHideReducer from './components/Reducers/showHideReducer';
+import showHideReducer from './Reducers/showHideReducer';
 import { createStore } from "redux";
 import './index.css'
 
